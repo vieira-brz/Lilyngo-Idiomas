@@ -16,17 +16,17 @@ type Props = {
 
 const Items = ({ hearts, points, hasActiveSubscription }: Props) => {
 
-const [pending, startTransition] = useTransition()
+    const [pending, startTransition] = useTransition()
 
-const onrefillHearts = () => {
-    if (pending || hearts == 5 || points < POINTS_TO_REFILL) {
-        return
+    const onrefillHearts = () => {
+        if (pending || hearts == 5 || points < POINTS_TO_REFILL) {
+            return
+        }
+
+        startTransition(() => {
+            refillHearts().catch(() => toast('Something went wrong.'))
+        })
     }
-
-    startTransition(() => {
-        refillHearts().catch(() => toast('Something went wrong.'))
-    })
-}
 
     return (
         <ul className="w-full">
