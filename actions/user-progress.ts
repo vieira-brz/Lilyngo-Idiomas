@@ -8,7 +8,7 @@ import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
 export const upsertUserProgress = async (courseId: number) => {
-    const { userId } = auth()
+    const { userId } = await auth()
     const user = await currentUser()
 
     if (!userId || !user) {
