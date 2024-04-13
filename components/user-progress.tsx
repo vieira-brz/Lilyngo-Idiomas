@@ -26,8 +26,8 @@ const UserProgress = ({ activeCourse, hearts, points, hasActiveSubscription }: P
                 </Button>
             </Link>
             <Link href={'/shop'}>
-                <Button variant={'ghost'} className="text-rose-500">
-                    <Image src='/heart.svg' height={22} width={22} alt="Hearts" className="mr-2" />
+                <Button variant={'ghost'} className="text-indigo-500">
+                    <Image src='/heart.svg' height={22} width={22} alt="Hearts" className="mr-2" style={{ filter: 'hue-rotate(240deg)' }} />
                     {hasActiveSubscription ? <InfinityIcon className="h-4 w-4 stroke-[3]"/> : hearts}
                 </Button>
             </Link>
