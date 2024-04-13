@@ -1,4 +1,4 @@
-"use client"
+"user server"
 
 import db from "@/db/drizzle"
 import { getCourseById, getUserProgress } from "@/db/queries"
@@ -8,7 +8,7 @@ import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
 export const upsertUserProgress = async (courseId: number) => {
-    const { userId } = await auth()
+    const { userId } = auth()
     const user = await currentUser()
 
     if (!userId || !user) {

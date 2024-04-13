@@ -19,13 +19,13 @@ const List = ({ courses, activeCourseId }: Props) => {
 
     const onClick = (id: number) => {
         if (pending) return 
-
+        
         if (id === activeCourseId) {
             return router.push('/learn')
         }
 
         startTransition(() => {
-            upsertUserProgress(id).catch(() => toast.error("Something went wrong"))
+            upsertUserProgress(id).catch((err) => toast.error(err))
         })
     }
 
@@ -39,7 +39,7 @@ const List = ({ courses, activeCourseId }: Props) => {
                         id={course.id}
                         title={course.title}
                         imageSrc={course.imageSrc}
-                        onClick={() => {onClick(course.id)}}
+                        onClick={onClick}
                         disabled={pending}
                         active={course.id === activeCourseId}
                     />
