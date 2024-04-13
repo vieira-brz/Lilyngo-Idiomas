@@ -39,7 +39,7 @@ const List = ({ courses, activeCourseId }: Props) => {
                         id={course.id}
                         title={course.title}
                         imageSrc={course.imageSrc}
-                        onClick={() => { }}
+                        onClick={() => {onClick(course.id)}}
                         disabled={pending}
                         active={course.id === activeCourseId}
                     />
