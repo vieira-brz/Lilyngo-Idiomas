@@ -3,11 +3,10 @@
 import { refillHearts } from "@/actions/user-progress";
 import { createStripeUrl } from "@/actions/user-subscription";
 import { Button } from "@/components/ui/button";
+import { POINTS_TO_REFILL } from "@/constants";
 import Image from "next/image";
 import { useTransition } from "react";
 import { toast } from "sonner";
-
-const POINTS_TO_REFILL = 10;
 
 type Props = {
     hearts: number;
@@ -45,7 +44,7 @@ const Items = ({ hearts, points, hasActiveSubscription }: Props) => {
                 <Image src='/heart.svg' height={60} width={60} alt="Hearts" style={{ filter: 'hue-rotate(240deg)' }} />
                 <div className="flex-1">
                     <p className="text-neutral-700 text-base lg:text-xl font-bold">
-                        Refil hearts
+                        Refill hearts
                     </p>
                 </div>
                 <Button disabled={hearts === 5 || points < POINTS_TO_REFILL || pending} onClick={onrefillHearts}>
