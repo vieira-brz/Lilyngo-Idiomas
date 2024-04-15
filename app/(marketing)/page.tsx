@@ -22,7 +22,7 @@ export default function Home() {
           <ClerkLoaded>
             <SignedOut>
               <SignUpButton mode="modal" afterSignInUrl="/learn" afterSignUpUrl="/learn">
-                <Button size={'lg'} variant={'secondary'} className="w-full">Get Started</Button>
+                <Button size={'lg'} variant={'super'} className="w-full">Get Started</Button>
               </SignUpButton>
 
               <SignInButton mode="modal" afterSignInUrl="/learn" afterSignUpUrl="/learn">
