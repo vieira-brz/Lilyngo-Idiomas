@@ -1,7 +1,7 @@
 import FeedWrapper from "@/components/feed-wrapper"
 import StickyWrapper from "@/components/sticky-wrapper"
 import UserProgress from "@/components/user-progress"
-import { getUserProgress } from "@/db/queries"
+import { getUserProgress, getUserSubs } from "@/db/queries"
 import Image from "next/image"
 import { redirect } from "next/navigation"
 import Items from "./items"
@@ -9,17 +9,20 @@ import Items from "./items"
 const ShopPage = async () => {
   
     const userProgressData = getUserProgress()
+    const userSubsData = getUserSubs()
 
-    const [userProgress] = await Promise.all([userProgressData])
+    const [userProgress, userSubs] = await Promise.all([userProgressData, userSubsData])
 
     if (!userProgress || !userProgress.activeCourse) {
         redirect('/courses')
     }
 
+    const isPro = !!userSubs?.isActive
+
     return (
     <div className="flex fle-row-reverse gap-[48px] px-6">
       <StickyWrapper>
-        <UserProgress activeCourse={userProgress.activeCourse} hearts={userProgress.hearts} points={userProgress.points} hasActiveSubscription={false} />
+        <UserProgress activeCourse={userProgress.activeCourse} hearts={userProgress.hearts} points={userProgress.points} hasActiveSubscription={isPro} />
       </StickyWrapper>
       <FeedWrapper>
         <div className="w-full flex flex-col items-center">
@@ -30,7 +33,7 @@ const ShopPage = async () => {
             <p className="text-muted-foreground text-center text-lg mb-6">
                 Spend your points on cool stuff.
             </p>
-            <Items hearts={userProgress.hearts} points={userProgress.points} hasActiveSubscription={false} />
+            <Items hearts={userProgress.hearts} points={userProgress.points} hasActiveSubscription={isPro} />
         </div>
       </FeedWrapper>
     </div>

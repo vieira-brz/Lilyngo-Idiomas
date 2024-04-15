@@ -1,5 +1,5 @@
 import { relations } from "drizzle-orm";
-import { boolean, integer, pgEnum, pgTable, serial, text } from "drizzle-orm/pg-core";
+import { boolean, integer, pgEnum, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
 
 export const courses = pgTable("courses", {
     id: serial("id").primaryKey(),
@@ -107,3 +107,12 @@ export const userProgressRelations = relations(userProgress, ({ one }) => ({
         references: [courses.id],
     }),
 }));
+
+export const userSubscription = pgTable("user_subscription", {
+    id: serial('id').primaryKey(),
+    userId: text('user_id').notNull().unique(),
+    stripCustomerId: text('stripe_customer_id').notNull().unique(),
+    stripSubscriptionId: text('stripe_subscription_id').notNull().unique(),
+    stripPriceId: text('stripe_price_id').notNull(),
+    stripCurrentPeriodEnd: timestamp('stripe_current_period_id').notNull(),
+})
