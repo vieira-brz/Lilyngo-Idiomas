@@ -4,7 +4,7 @@ import { neon } from "@neondatabase/serverless";
 
 import * as schema from "../db/schema";
 
-const sql = neon(process.env.DATABASE_URL!);
+const sql = neon(process.env.NEXT_PUBLIC_DATABASE_URL!);
 // @ts-ignore
 const db = drizzle(sql, { schema });
 
