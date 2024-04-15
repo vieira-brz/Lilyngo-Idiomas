@@ -10,6 +10,8 @@ const ResultCard = ({ variant, value }: Props) => {
 
     const imageSrc = variant === "hearts" ? "/heart.svg" : "/points.svg"
 
+    const style_heart = variant === "hearts" ? 'hue-rotate(240deg)' : ''
+
     return (
         <div className={cn(
             "rounded-2xl border-2 w-full",
@@ -29,7 +31,7 @@ const ResultCard = ({ variant, value }: Props) => {
                 variant === "points" && "text-orange-500",
                 variant === "hearts" && "text-indigo-500"
             )}>
-                <Image alt={'Icon'} src={imageSrc} width={30} height={30} className="mr-1.5" style={variant === "hearts" ? { filter: 'hue-rotate(240deg)' } : null} />
+                <Image alt={'Icon'} src={imageSrc} width={30} height={30} className="mr-1.5" style={{ filter: style_heart }} />
                 {value}
             </div>
         </div>
