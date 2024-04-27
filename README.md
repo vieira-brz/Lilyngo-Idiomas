@@ -33,10 +33,6 @@
 ## Contato
 <p>Se você tiver alguma dúvida, sugestão ou feedback, não hesite em entrar em contato conosco através do email: vinivieira0509@gmail.com.</p>
 
+## Site
 <i>Obrigado por escolher o Lilyngo para sua jornada de aprendizado de idiomas! 🚀</i>
 <p>Acesse em: https://lilyngo.vercel.app/</p>
-
-</br></br>
-
-# Demonstração
-(awaiting upload)
