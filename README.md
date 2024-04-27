@@ -21,10 +21,10 @@
 </ul>
   
 ## Contribuição
-<p>Estamos sempre abertos a contribuições! Se você gostaria de colaborar com o desenvolvimento do Lilyngo, sinta-se à vontade para abrir uma issue ou enviar um pull request.</p>p>
+<p>Estamos sempre abertos a contribuições! Se você gostaria de colaborar com o desenvolvimento do Lilyngo, sinta-se à vontade para abrir uma issue ou enviar um pull request.</p>
 
 ## Problemas Conhecidos
-<p>Atualmente, estamos trabalhando na correção dos seguintes problemas:</p>p>
+<p>Atualmente, estamos trabalhando na correção dos seguintes problemas:</p>
 <ul>
 <li>Correção de bugs relacionados à interface do usuário.</li>
 <li>Documentação de código e melhorias na estrutura do projeto.</li>
